@@ -1,0 +1,74 @@
+# ==========================================
+# PYTHON (Compilação e Cache)
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pya
+
+
+# ==========================================
+# AMBIENTES VIRTUAIS (Dependências locais)
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+/env/
+/venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# ==========================================
+# SEGURANÇA E CONFIGURAÇÃO (Variáveis de Ambiente)
+# ==========================================
+.env
+.env.local
+.env.*
+!.env.example
+secrets.json
+
+
+# ==========================================
+# BANCO DE DADOS (Arquivos locais de desenvolvimento)
+# ==========================================
+*.sqlite3
+*.db
+
+
+# ==========================================
+# LOGS
+# ==========================================
+*.log
+
+
+# ==========================================
+# VS CODE (Configurações específicas da sua IDE)
+# ==========================================
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+
+# ==========================================
+# DJANGO (Arquivos de mídia gerados por usuários)
+# ==========================================
+media/
+staticfiles/
+collected_static/
+
+
+# ==========================================
+# TESTES E QUALIDADE DE CÓDIGO
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+.black
