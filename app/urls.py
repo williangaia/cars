@@ -4,7 +4,12 @@ from django.contrib import admin
 from django.urls import path
 
 from accounts.views import login_view, logout_view, register_view
-from cars.views import CarDetailView, CarsListView, NewCarCreateView
+from cars.views import (
+    CarDetailView,
+    CarsListView,
+    CarUpdateView,
+    NewCarCreateView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,5 +20,10 @@ urlpatterns = [
     path(route='logout', view=logout_view, name='logout'),
     path(
         route='car/<int:pk>/', view=CarDetailView.as_view(), name='car_detail'
+    ),
+    path(
+        route='car/<int:pk>/update/',
+        view=CarUpdateView.as_view(),
+        name='car_update',
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

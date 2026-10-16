@@ -54,14 +54,6 @@ secrets.json
 
 
 # ==========================================
-# DJANGO (Arquivos de mídia gerados por usuários)
-# ==========================================
-media/
-staticfiles/
-collected_static/
-
-
-# ==========================================
 # TESTES E QUALIDADE DE CÓDIGO
 # ==========================================
 .pytest_cache/
