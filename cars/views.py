@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, DetailView, ListView
 
 from cars.forms import CarModelForm
 from cars.models import Car
@@ -22,3 +22,8 @@ class NewCarCreateView(CreateView):
     form_class = CarModelForm
     template_name = 'new_car.html'
     success_url = '/cars/'
+
+
+class CarDetailView(DetailView):
+    model = Car
+    template_name = 'car_detail.html'
