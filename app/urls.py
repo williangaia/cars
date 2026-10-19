@@ -5,6 +5,7 @@ from django.urls import path
 
 from accounts.views import login_view, logout_view, register_view
 from cars.views import (
+    CarDeleteView,
     CarDetailView,
     CarsListView,
     CarUpdateView,
@@ -25,5 +26,10 @@ urlpatterns = [
         route='car/<int:pk>/update/',
         view=CarUpdateView.as_view(),
         name='car_update',
+    ),
+    path(
+        route='car/<int:pk>/delete/',
+        view=CarDeleteView.as_view(),
+        name='car_delete',
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
