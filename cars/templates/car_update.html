@@ -115,6 +115,7 @@
     <div>
       <div class="buttons-container">
         <input type="submit" value="Salvar Alterações" class="btn btn-primary">
+        <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar Carro</a>
         <a href="{% url 'cars_list' %}" class="btn btn-secondary">Cancelar</a>
       </div>
     </div>
