@@ -15,6 +15,7 @@ class CarModelForm(forms.ModelForm):
             'plate',
             'value',
             'photo',
+            'bio',
         ]
 
     def clean_value(self):
