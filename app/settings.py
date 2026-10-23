@@ -133,3 +133,4 @@ MAILERS = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+OPENAI_API_KEY=os.getenv('OPENAI_API_KEY')
