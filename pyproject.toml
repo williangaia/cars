@@ -8,6 +8,8 @@ dependencies = [
     "django>=6.1.1",
     "openai[standard]>=3.37.0",
     "pillow>=12.3.0",
+    "psycopg[binary]>=3.3.6",
+    "pydantic-settings>=2.16.1",
 ]
 
 [dependency-groups]
@@ -30,6 +32,8 @@ ignore = ['PLR2004', 'PLR0917', 'PLR0913']
 [tool.ruff.lint.per-file-ignores]
 "app/settings.py" = ['E501']
 "manage.py" = ['PLC0415']
+"cars/apps.py" = ['PLC0415', 'F401']
+"cars/models.py" = ['DJ001']
 
 [tool.ruff.format]
 quote-style = 'single'

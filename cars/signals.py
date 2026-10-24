@@ -15,14 +15,19 @@ def car_inventory_update():
         cars_value=cars_value,
     )
 
+
 @receiver(signal=pre_save, sender=Car)
-def car_pre_save(sender, instance, **kwargs):
+def car_pre_save(sender, instance, raw=False, **kwargs):
+    if raw:
+        return
+
     if not instance.bio:
         instance.bio = get_car_ai_bio(
             brand=instance.brand,
             model=instance.model,
             year=instance.model_year,
         )
+
 
 @receiver(signal=post_save, sender=Car)
 def car_post_save(sender, instance, **kwargs):

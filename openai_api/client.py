@@ -1,10 +1,10 @@
 from openai import APIError, OpenAI
 
-from app import settings
+from config import settings
 
 client = OpenAI(timeout=30.0, max_retries=3, api_key=settings.OPENAI_API_KEY)
 
-MODEL = "gpt-6-luna"
+MODEL = 'gpt-6-luna'
 MAX_CHARS = 250
 
 INSTRUCTIONS = f"""
@@ -34,11 +34,11 @@ que marcaram gerações."
 
 def get_car_ai_bio(*, brand: str, model: str, year: int) -> str:
     prompt = (
-        "Use os dados abaixo apenas como contexto para escrever a descrição. "
-        "Eles já aparecem na ficha do anúncio e não devem ser repetidos.\n\n"
-        f"Marca: {brand}\n"
-        f"Modelo: {model}\n"
-        f"Ano: {year}"
+        'Use os dados abaixo apenas como contexto para escrever a descrição. '
+        'Eles já aparecem na ficha do anúncio e não devem ser repetidos.\n\n'
+        f'Marca: {brand}\n'
+        f'Modelo: {model}\n'
+        f'Ano: {year}'
     )
     try:
         response = client.responses.create(
@@ -48,9 +48,9 @@ def get_car_ai_bio(*, brand: str, model: str, year: int) -> str:
             max_output_tokens=400,
         )
     except APIError as exc:
-        raise RuntimeError(f"Falha ao gerar descrição: {exc}") from exc
+        raise RuntimeError(f'Falha ao gerar descrição: {exc}') from exc
 
-    text = " ".join(response.output_text.split())
+    text = ' '.join(response.output_text.split())
     if len(text) > MAX_CHARS:
-        text = text[:MAX_CHARS].rsplit(" ", 1)[0] + "…"
+        text = text[:MAX_CHARS].rsplit(' ', 1)[0] + '…'
     return text
