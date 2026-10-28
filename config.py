@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     POSTGRES_HOST: str = '127.0.0.1'
     POSTGRES_PORT: int = 5432
     OPENAI_API_KEY: str
+    SECRET_KEY: str
 
 
 settings = Settings()
